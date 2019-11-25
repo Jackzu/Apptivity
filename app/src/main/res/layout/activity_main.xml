@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".activities.MainActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/main_btn_info"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:text="@string/main_btn_info"
+        android:textColor="?attr/Text_Color"
+        android:background="@drawable/buttons_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn_start" />
+
+    <EditText
+        android:id="@+id/userMessage"
+        android:layout_width="335dp"
+        android:layout_height="32dp"
+        android:ems="14"
+        android:hint="@string/main_input_hint"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="461dp" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:text="@string/main_btn_send_message"
+        tools:layout_editor_absoluteX="301dp"
+        tools:layout_editor_absoluteY="530dp" />
+
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="149dp"
+        android:layout_height="45dp"
+        android:text="@string/main_btn_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="530dp" />
+
+    <Button
+        android:id="@+id/btnRecycleView"
+        android:layout_width="113dp"
+        android:layout_height="34dp"
+        android:text="@string/main_btn_list"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="541dp" />
+
+    <ImageView
+        android:id="@+id/main_view_logo"
+        android:layout_width="274dp"
+        android:layout_height="228dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/main_btn_start"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:text="@string/main_btn_start"
+        android:textColor="?attr/Text_Color"
+        android:background="@drawable/buttons_round"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_view_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jackz</string>
+    <string name="main_btn_show_toast">Zeige Notification</string>
+    <string name="main_input_hint">nachricht eingeben...</string>
+    <string name="main_btn_send_message">Nachricht senden</string>
+    <string name="main_btn_share">teilen</string>
+    <string name="main_btn_list">Zeige Liste</string>
+
+    //** App Theme Setting */
+
+    <string name="theme">Wechsel Design</string>
+
+
+    //** strings for activity_main */
+
+    <string name="main_btn_start">Lass uns loslegen!</string>
+    <string name="main_btn_info">Wie funktioniert es?</string>
+
+    //** strings for activity_info */
+
+    <string name="info_txt_headline">So funktioniert es...</string>
+    <string name="info_txt_infotext">Apptivity hilft dir dabei deine neuen Lieblings Locations zu finden! Folge einfach den Fragen auf dem Bildschirm und wir werden den Rest der Arbeit für dich machen.</string>
+
+</resources>
