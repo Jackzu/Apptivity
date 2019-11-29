@@ -64,6 +64,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, InfoActivity::class.java)
             startActivity(intent)
         }
+
+        /** call activity_started.xml */
+
+        main_btn_start.setOnClickListener {
+            val intent = Intent(this, SearchTypeActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     // Code to switch Design

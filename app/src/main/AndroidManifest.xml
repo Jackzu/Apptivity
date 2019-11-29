@@ -20,6 +20,9 @@
         <activity android:name=".activities.SecondActivity"/>
         <activity android:name=".activities.LocationsActivity"/>
         <activity android:name=".activities.InfoActivity"/>
+        <activity android:name=".activities.StartedActivity"/>
+        <activity android:name=".activities.SearchTypeActivity"/>
+        <activity android:name=".activities.SavedSearchActivity"/>
     </application>
 
 </manifest>

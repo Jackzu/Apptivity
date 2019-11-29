@@ -11,11 +11,15 @@
         layout="@layout/toolbar" />
 
     <TextView
-        android:id="@+id/info_txt_headline"
+        android:id="@+id/savedsearch_txt_headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="@string/info_txt_headline"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginRight="98dp"
+        android:text="@string/savedsearch_txt_headline"
         android:textColor="?attr/Text_Color"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -24,40 +28,39 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/info_txt_cardView"
+        android:id="@+id/savedsearch_1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/info_txt_headline"
+        android:layout_height="80dp"
+        android:layout_below="@id/savedsearch_txt_headline"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
+        android:background="@drawable/question_field"
         android:backgroundTint="?attr/card_background"
         android:elevation="10dp"
-        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_txt_headline">
+        app:layout_constraintTop_toBottomOf="@+id/savedsearch_txt_headline">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/info_txt_infotext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/info_txt_infotext"
+                android:id="@+id/savedsearch_txt_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/savedsearch_txt_1"
                 android:textColor="?attr/Text_Color"
-                android:textSize="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textSize="22dp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,4 +22,22 @@
     <string name="info_txt_headline">So funktioniert es...</string>
     <string name="info_txt_infotext">Apptivity hilft dir dabei deine neuen Lieblings Locations zu finden! Folge einfach den Fragen auf dem Bildschirm und wir werden den Rest der Arbeit für dich machen.</string>
 
+    //** strings for activity_started */
+
+    <string name="started_txt_headline">Wähle eine Kategorie</string>
+    <string name="category_txt_activity">Aktivitäten</string>
+    <string name="category_txt_restaurant">Essen</string>
+    <string name="category_txt_sleeping">Übernachtungen</string>
+    <string name="category_txt_shopping">Shoppen</string>
+
+    //** strings for activity_searchtype */
+
+    <string name="searchtype_txt_headline">Starte eine neue Suche oder wähle eine gespeicherte</string>
+    <string name="searchtype_txt_newsearch">Neue Suche</string>
+    <string name="searchtype_txt_savedsearch">Gespeicherte Suchen</string>
+
+    //** strings for activity_savedssearch */
+    <string name="savedsearch_txt_headline">Wähle eine gespeicherte Suche</string>
+    <string name="savedsearch_txt_1">Funktion noch nicht verfügbar</string>
+
 </resources>
