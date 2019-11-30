@@ -11,7 +11,7 @@
         <item name="backgroundColor">#EEEEEE</item>
         <item name="card_background">#FFFFFF</item>
         <item name="Text_Color">#000000</item>
-        <item name="Button_Color">@color/colorPrimaryDark</item>
+        <item name="Button_Color">@color/colorPrimary</item>
 
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
 
@@ -28,7 +28,7 @@
         <item name="backgroundColor">#000000</item>
         <item name="card_background">#37474F</item>
         <item name="Text_Color">#FFFFFF</item>
-        <item name="Button_Color">@color/colorPrimaryDark</item>
+        <item name="Button_Color">@color/colorPrimary</item>
 
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
 

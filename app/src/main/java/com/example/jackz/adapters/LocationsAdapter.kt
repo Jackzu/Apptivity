@@ -12,10 +12,10 @@ import com.example.jackz.R
 import com.example.jackz.showToast
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class LocationsAdapter(val context: Context, private val locations: List<Location> ) : RecyclerView.Adapter<LocationsAdapter.MyViewHolder>() {
+class LocationsAdapter(val context: Context, private val locations: List<Location>, private val locationsTime: List<Location>, private val locationsPicture: List<Location>  ) : RecyclerView.Adapter<LocationsAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false )
+        val view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
         return MyViewHolder(view)
     }
 
@@ -25,24 +25,27 @@ class LocationsAdapter(val context: Context, private val locations: List<Locatio
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val location = locations[position]
-        holder.setData(location, position)
+        val locationTime = locationsTime[position]
+        val locationPicture = locationsPicture[position]
+        holder.setData(location, locationTime, locationPicture, position)
+
     }
 
-    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var currentLocation: Location? = null
         var currentPosition: Int = 0
 
-        init{
-            itemView.setOnClickListener{
-                currentLocation?.let{
+        init {
+            itemView.setOnClickListener {
+                currentLocation?.let {
                     context.showToast(currentLocation!!.title + " ist schon geil!")
                 }
             }
 
-            itemView.imgShare.setOnClickListener{
+            itemView.imgShare.setOnClickListener {
 
-                currentLocation?.let{
+                currentLocation?.let {
                     val message: String = "Bruder lass mal zu " + currentLocation!!.title
 
                     val intent = Intent()
@@ -55,16 +58,25 @@ class LocationsAdapter(val context: Context, private val locations: List<Locatio
             }
         }
 
-        fun setData(location: Location?, pos: Int){
+        fun setData(
+            location: Location?,
+            locationTime: Location?,
+            locationPicture: Location?,
+            pos: Int
+        ) {
 
-            location?.let{
+            location?.let {
                 itemView.txvTitle.text = location.title
+                itemView.txvTimes.text = locationTime!!.title
+
+                val drawaleResource = R.drawable.mcdonalds
+                itemView.imgLocation.setImageResource(drawaleResource)
+
+                this.currentLocation = location
+                this.currentPosition = pos
             }
 
-            this.currentLocation = location
-            this.currentPosition = pos
         }
 
     }
-
 }
