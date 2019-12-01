@@ -8,6 +8,8 @@ import androidx.cardview.widget.CardView
 import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
 import kotlinx.android.synthetic.main.activity_main.*
+import okhttp3.*
+import java.io.IOException
 
 class SearchTypeActivity : AppCompatActivity() {
 
@@ -46,4 +48,26 @@ class SearchTypeActivity : AppCompatActivity() {
         }
 
     }
+
+    /**
+     * JSON API CALL TEST
+     */
+    fun fetchjson() {
+        println("testing")
+        val url = "https://api.letsbuildthatapp.com/youtube/home_feed"
+
+        val request = Request.Builder().url(url).build()
+        val client = OkHttpClient()
+        client.newCall(request).enqueue(object: Callback {
+            override fun onResponse(call: Call?, response: Response?){
+                val body = response?.body()?.string()
+                println(body)
+            }
+
+            override fun onFailure(call: Call?, e:IOException?){
+                println("Failed to execute request")
+            }
+        })
+    }
+
 }
