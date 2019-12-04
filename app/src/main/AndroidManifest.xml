@@ -25,6 +25,7 @@
         <activity android:name=".activities.StartedActivity"/>
         <activity android:name=".activities.SearchTypeActivity"/>
         <activity android:name=".activities.SavedSearchActivity"/>
+        <activity android:name=".activities.ActivitiesQuestions"/>
     </application>
 
 </manifest>
