@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
@@ -64,6 +66,10 @@ class ActivitiesQuestions : AppCompatActivity() {
             override fun onResponse(call: Call?, response: Response?) {
                 val body : String? = response?.body()?.string()
                 println(body)
+
+                val gson:Gson = GsonBuilder().create()
+                val resultData = gson.fromJson(body,ResultData::class.java)
+                println(resultData.results[0].place_id)
             }
 
             override fun onFailure(call: Call?, e: IOException?) {
@@ -76,3 +82,14 @@ class ActivitiesQuestions : AppCompatActivity() {
 
 
 }
+
+class ResultData(val results: List<Results>)
+
+class Results(val geometry: Geometry, val icon: String, val id: String, val name: String, val photos: List<PhotoData>, val place_id: String, val reference: String, val scope: String, val types: List<String>, val vicinity: String)
+
+class Geometry(val location: Location, val viewport: Viewport)
+
+class Location(val lat: Double, val lng: Double)
+class Viewport(val northeast: Location, val southwest: Location)
+
+class PhotoData(val height: Int, val html_attributions: List<String>, val photo_reference: String, val width :Int)
