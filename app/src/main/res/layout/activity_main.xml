@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
+    android:screenOrientation="portrait"
     tools:context=".activities.MainActivity">
 
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
+
 
     <Button
         android:id="@+id/main_btn_info"
@@ -36,11 +39,12 @@
         android:layout_marginLeft="40dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="8dp"
         android:ems="14"
         android:hint="@string/main_input_hint"
         app:layout_constraintBottom_toTopOf="@+id/btnRecycleView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -58,9 +62,9 @@
         android:id="@+id/btnShare"
         android:layout_width="87dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="96dp"
         android:text="@string/main_btn_share"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -73,7 +77,7 @@
         android:layout_marginLeft="48dp"
         android:layout_marginEnd="227dp"
         android:layout_marginRight="227dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="84dp"
         android:text="@string/main_btn_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSend"
@@ -110,5 +114,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_view_logo" />
+
+
+    <TextView
+        android:id="@+id/main_camera_share"
+        android:layout_width="276dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="24dp"
+        android:layout_weight="1"
+        android:text="@string/main_camera_share"
+        android:textColor="?attr/Text_Color"
+
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/main_camera_picture"
+        android:layout_width="118dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="17dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/camera" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

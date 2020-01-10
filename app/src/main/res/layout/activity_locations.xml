@@ -14,8 +14,9 @@
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="317dp"
-        android:layout_height="20dp"
+        android:layout_height="29dp"
         android:layout_marginTop="12dp"
+        android:thumbTint="@color/colorPrimary"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:layout_editor_absoluteX="0dp"></SeekBar>
 
@@ -27,7 +28,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="12dp"
-        android:text="0 km"
+        android:text="4 km"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />

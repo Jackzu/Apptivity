@@ -42,13 +42,17 @@ class LocationsActivity : AppCompatActivity() {
         seekbar = findViewById(R.id.seekBar) as SeekBar
         kmCount = findViewById(R.id.kmRadius) as TextView
 
-        seekbar.max = 50
+        seekBar.max = 20
+        seekBar.setProgress(4)
 
         seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
-            override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 // Display the current progress of SeekBar
-                kmCount.text = "$i km"
+                if (progress == 0) {
+                    kmCount.text = "<$progress km"
+                } else
+                    kmCount.text = "$progress km"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {

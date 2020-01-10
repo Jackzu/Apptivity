@@ -5,6 +5,7 @@
     <string name="main_btn_send_message">Send Message</string>
     <string name="main_btn_share">Share</string>
     <string name="main_btn_list">Show List</string>
+    <string name="main_camera_share">Show your friends where we brought you!</string>
 
     //** App Theme Setting */
 
