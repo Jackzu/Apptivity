@@ -1,6 +1,9 @@
 package com.example.jackz.activities
 
 import android.os.Bundle
+import android.widget.SeekBar
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jackz.adapters.LocationsAdapter
@@ -12,6 +15,9 @@ import kotlinx.android.synthetic.main.activity_locations.*
 class LocationsActivity : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
+    lateinit var seekbar : SeekBar
+    lateinit var kmCount : TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -30,6 +36,31 @@ class LocationsActivity : AppCompatActivity() {
         // toolbar
 
         setSupportActionBar(findViewById(R.id.toolbar))
+
+        // Radius Slider
+
+        seekbar = findViewById(R.id.seekBar) as SeekBar
+        kmCount = findViewById(R.id.kmRadius) as TextView
+
+        seekbar.max = 50
+
+        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+
+            override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
+                // Display the current progress of SeekBar
+                kmCount.text = "$i km"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+                // Do something
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                // Do something
+
+            }
+        })
     }
 
     private fun setupRecyclerView() {
@@ -43,3 +74,4 @@ class LocationsActivity : AppCompatActivity() {
 
     }
 }
+

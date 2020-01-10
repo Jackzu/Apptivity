@@ -30,7 +30,9 @@
 
     //** strings for activity_searchtype */
 
-    <string name="searchtype_txt_headline">Start a new search or choose a saved one</string>
+    <string name="searchtype_txt_headline">Start a new search or
+        choose a saved one</string>
+
     <string name="searchtype_txt_newsearch">New Search</string>
     <string name="searchtype_txt_savedsearch">Saved Searches</string>
 

@@ -14,12 +14,13 @@
         android:id="@+id/searchtype_txt_headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/searchtype_txt_headline"
         android:textColor="?attr/Text_Color"
         android:textSize="20dp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
