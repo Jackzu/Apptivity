@@ -115,33 +115,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_view_logo" />
 
-
-    <TextView
-        android:id="@+id/main_camera_share"
-        android:layout_width="276dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="24dp"
-        android:layout_weight="1"
-        android:text="@string/main_camera_share"
-        android:textColor="?attr/Text_Color"
-
-        android:textStyle="bold"
+    <LinearLayout
+        android:id="@+id/main_open_camera"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginBottom="18dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="38dp">
 
-    <ImageView
-        android:id="@+id/main_camera_picture"
-        android:layout_width="118dp"
-        android:layout_height="65dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginBottom="17dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/camera" />
 
+        <TextView
+            android:id="@+id/main_camera_share"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/main_camera_share"
+            android:textColor="?attr/Text_Color"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/main_camera_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/camera" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

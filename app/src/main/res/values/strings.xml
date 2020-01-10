@@ -41,7 +41,10 @@
     <string name="savedsearch_txt_headline">Choose a saved search</string>
     <string name="savedsearch_txt_1">Feature not yet available</string>
 
-
-
+    //** strings for activity_camera */
+    <string name="camera_subject">Look what I found through Apptivity</string>
+    <string name="camera_toast">Please take a picture first</string>
+    <string name="camera_capture">Take a picture</string>
+    <string name="camera_share">Share your picture</string>
 
 </resources>

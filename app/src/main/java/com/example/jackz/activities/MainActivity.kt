@@ -3,17 +3,21 @@ package com.example.jackz.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.LinearLayout
 import android.widget.Toolbar
 import com.example.jackz.Constants
 import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
+    val CAMERA_REQUEST_CODE = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -31,6 +35,14 @@ class MainActivity : AppCompatActivity() {
         // toolbar
 
         setSupportActionBar(findViewById(R.id.toolbar))
+
+        //camera
+        val camera = findViewById(R.id.main_open_camera) as LinearLayout
+
+        camera.setOnClickListener{
+            val intent = Intent(this, CameraActivity::class.java)
+            startActivity(intent)
+        }
 
         btnSend.setOnClickListener {
 
@@ -104,3 +116,4 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 }
+

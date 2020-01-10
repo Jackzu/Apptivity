@@ -22,11 +22,7 @@ class ActivitiesQuestions : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
 
-    
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        super.onCreate(savedInstanceState)
 
         //SharedPreferences state
 
@@ -36,6 +32,7 @@ class ActivitiesQuestions : AppCompatActivity() {
         }else
             setTheme(R.style.AppTheme)
 
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_activitiesquestions)
 
         setSupportActionBar(findViewById(R.id.toolbar))

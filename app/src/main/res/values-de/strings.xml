@@ -41,4 +41,10 @@
     <string name="savedsearch_txt_headline">Wähle eine gespeicherte Suche</string>
     <string name="savedsearch_txt_1">Funktion noch nicht verfügbar</string>
 
+    //** strings for activity_camera */
+    <string name="camera_subject">Guck wo mich Apptivity hinführte!</string>
+    <string name="camera_toast">Mach bitte ein Foto</string>
+    <string name="camera_capture">Mache ein Foto</string>
+    <string name="camera_share">Teile ein Foto</string>
+
 </resources>

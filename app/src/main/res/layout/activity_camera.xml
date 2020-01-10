@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    android:screenOrientation="portrait"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".activities.CameraActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/started_txt_headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/main_camera_share"
+        android:textColor="?attr/Text_Color"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/camera_image_view"
+        android:scaleType="centerCrop"
+        android:layout_margin="5dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp" />
+
+    <!--Button to open camera-->
+    <Button
+        android:id="@+id/camera_capture_btn"
+        android:text="@string/camera_capture"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="17dp"
+        android:textColor="?attr/Text_Color"
+        android:background="@drawable/buttons_round"/>
+
+    <Button
+        android:id="@+id/camera_share_btn"
+        android:text="@string/camera_share"
+        android:layout_width="275dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="17dp"
+        android:textColor="?attr/Text_Color"
+        android:background="@drawable/buttons_round"/>
+
+
+
+    </LinearLayout>
