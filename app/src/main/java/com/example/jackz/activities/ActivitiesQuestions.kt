@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jackz.R
 import com.example.jackz.adapters.MainAdapter
 import com.example.jackz.adapters.SaveSettings
+import com.example.jackz.models.ResultData
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_locations.*
@@ -22,7 +23,11 @@ class ActivitiesQuestions : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
 
         //SharedPreferences state
 
@@ -32,7 +37,6 @@ class ActivitiesQuestions : AppCompatActivity() {
         }else
             setTheme(R.style.AppTheme)
 
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_activitiesquestions)
 
         setSupportActionBar(findViewById(R.id.toolbar))
@@ -41,7 +45,7 @@ class ActivitiesQuestions : AppCompatActivity() {
 
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = MainAdapter()
+//        recyclerView.adapter = MainAdapter()
 
         fetchJson()
 
@@ -55,7 +59,7 @@ class ActivitiesQuestions : AppCompatActivity() {
     fun fetchJson(){
         println("Attempting to Fetch Json")
 
-        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.343136,13.628245&radius=100&key=AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
+        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.343136,13.628245&radius=150&key=AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
 
         var request = Request.Builder().url(url).build()
 
@@ -67,8 +71,14 @@ class ActivitiesQuestions : AppCompatActivity() {
                 println(body)
 
                 val gson:Gson = GsonBuilder().create()
-                val resultData = gson.fromJson(body,ResultData::class.java)
+                val resultData = gson.fromJson(body, ResultData::class.java)
                 println(resultData.results[0].place_id)
+
+
+
+                runOnUiThread{
+                    recyclerView.adapter = MainAdapter(resultData)
+                }
             }
 
             override fun onFailure(call: Call?, e: IOException?) {
@@ -82,13 +92,4 @@ class ActivitiesQuestions : AppCompatActivity() {
 
 }
 
-class ResultData(val results: List<Results>)
 
-class Results(val geometry: Geometry, val icon: String, val id: String, val name: String, val photos: List<PhotoData>, val place_id: String, val reference: String, val scope: String, val types: List<String>, val vicinity: String)
-
-class Geometry(val location: Location, val viewport: Viewport)
-
-class Location(val lat: Double, val lng: Double)
-class Viewport(val northeast: Location, val southwest: Location)
-
-class PhotoData(val height: Int, val html_attributions: List<String>, val photo_reference: String, val width :Int)
