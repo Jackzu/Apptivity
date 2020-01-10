@@ -1,14 +1,19 @@
 package com.example.jackz.activities
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.jackz.R
+import com.example.jackz.adapters.MainAdapter
 import com.example.jackz.adapters.SaveSettings
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import kotlinx.android.synthetic.main.activity_locations.*
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
@@ -17,7 +22,7 @@ class ActivitiesQuestions : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
 
-    private lateinit var mTextViewResult: TextView
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -35,16 +40,13 @@ class ActivitiesQuestions : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        //this.recyclerView.setBackgroundColor(Color.BLUE)
+
+        var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = MainAdapter()
 
         fetchJson()
-
-
-        /*var Request = new Request.Builder()
-            .url(url)
-            .build();
-        client.newCall(request).enqueue(new Callback() {
-
-        })*/
 
 
     }
@@ -55,7 +57,7 @@ class ActivitiesQuestions : AppCompatActivity() {
      */
     fun fetchJson(){
         println("Attempting to Fetch Json")
-        this.mTextViewResult = findViewById(R.id.text_view_result)
+
         var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.343136,13.628245&radius=100&key=AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
 
         var request = Request.Builder().url(url).build()
