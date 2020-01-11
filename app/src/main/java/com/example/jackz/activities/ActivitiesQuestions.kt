@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_locations.*
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
+import java.lang.ref.Reference
 
 class ActivitiesQuestions : AppCompatActivity() {
 
@@ -88,6 +89,8 @@ class ActivitiesQuestions : AppCompatActivity() {
             }
         })
     }
+
+
 
 
 }

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jackz.R
 import com.example.jackz.activities.*
 import com.example.jackz.models.ResultData
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item.view.*
 
 
@@ -31,6 +32,32 @@ class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewH
         val location = ResultData.results.get(position)
         holder.view.txvTitle?.text = location.name
         // holder?.view.imgLocation?. = location.photos[0].photo_reference
+
+        val entryPicture = holder?.view?.imgLocation
+
+
+        var piclink:String
+        if(location.photos != null){
+            piclink = build_pictureString(location.photos[0]!!.photo_reference!!,"AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg","400","400")
+            println(piclink)
+        }else{
+            piclink = "https://www.cvent-assets.com/brand-page-guestside-site/assets/images/venue-card-placeholder.png"
+            println(piclink)
+        }
+
+        Picasso.with(holder.view.context).load(piclink).into(entryPicture)
+    }
+
+    fun build_pictureString(photoReference: String, apiToken: String, maxWidth: String, maxHeight:String): String {
+
+        var baseString = "https://maps.googleapis.com/maps/api/place/photo?"
+
+        baseString = baseString + "key=" + apiToken
+        baseString = baseString + "&photo_reference=" + photoReference
+        baseString = baseString + "&maxwidth=" + maxWidth
+        baseString = baseString + "&maxheight=" + maxHeight
+
+        return baseString
     }
 
 }
