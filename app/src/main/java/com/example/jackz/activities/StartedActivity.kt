@@ -36,18 +36,30 @@ class StartedActivity : AppCompatActivity() {
 
         categoryAcitvity.setOnClickListener {
             val intent = Intent(this, ActivitiesQuestions::class.java)
+
+            intent.putExtra("type","type=activity")
+
             startActivity(intent)
         }
         categoryFood.setOnClickListener {
             val intent = Intent(this, ActivitiesQuestions::class.java)
+
+            intent.putExtra("type","type=restaurant")
+
             startActivity(intent)
         }
         categoryAccomendation.setOnClickListener {
             val intent = Intent(this, ActivitiesQuestions::class.java)
+
+            intent.putExtra("type","type=lodging")
+
             startActivity(intent)
         }
         categoryShopping.setOnClickListener {
             val intent = Intent(this, ActivitiesQuestions::class.java)
+
+            intent.putExtra("type","type=shops")
+
             startActivity(intent)
         }
     }

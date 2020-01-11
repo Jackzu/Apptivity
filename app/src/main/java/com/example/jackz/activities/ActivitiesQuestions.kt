@@ -25,6 +25,7 @@ class ActivitiesQuestions : AppCompatActivity() {
     var latitude : String ="52.343136"
     var radius : Int =250
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -47,6 +48,8 @@ class ActivitiesQuestions : AppCompatActivity() {
         seekBar.max = 20
         seekBar.setProgress(1)
 
+        val type = intent.getStringExtra("type").toString()
+
         seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
@@ -67,7 +70,7 @@ class ActivitiesQuestions : AppCompatActivity() {
                 var progress = seekBar.progress
                 progress= progress*1000
                 println(progress)
-                fetchJson(longitude, latitude, progress)
+                fetchJson(longitude, latitude, progress, type)
 
             }
         })
@@ -78,7 +81,7 @@ class ActivitiesQuestions : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 //        recyclerView.adapter = MainAdapter()
 
-        fetchJson(longitude,latitude,radius)
+        fetchJson(longitude,latitude,radius, type)
 
 
     }
@@ -86,12 +89,12 @@ class ActivitiesQuestions : AppCompatActivity() {
     /**
      * JSON API CALL TEST
      */
-    fun fetchJson(longitude: String, latitude: String, radius: Int){
+    fun fetchJson(longitude: String, latitude: String, radius: Int, type: String){
         println("Attempting to Fetch Json")
 
         var apiTokenString = "&key=AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
 
-        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+""+apiTokenString
+        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+""+apiTokenString+"&"+type
 
         var request = Request.Builder().url(url).build()
 
