@@ -54,15 +54,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnShare.setOnClickListener {
-
-            val message: String = userMessage.text.toString()
-
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT, message)
-            intent.type = "text/plain"
-
-            startActivity(Intent.createChooser(intent, "Share to:"))
+            val intent = Intent(this, ResultActivity::class.java)
+            startActivity(intent)
         }
 
         btnRecycleView.setOnClickListener {

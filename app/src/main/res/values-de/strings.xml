@@ -47,4 +47,7 @@
     <string name="camera_capture">Mache ein Foto</string>
     <string name="camera_share">Teile ein Foto</string>
 
+    //** strings for result */
+    <string name="result_reviews">Rezensionen:</string>
+
 </resources>
