@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jackz.R
 import com.example.jackz.activities.*
+import com.example.jackz.models.Coordinates
 import com.example.jackz.models.ResultData
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item.view.*
@@ -31,14 +32,13 @@ class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewH
         //val location = locations.get(position)
         val location = ResultData.results.get(position)
         holder.view.txvTitle?.text = location.name
-        // holder?.view.imgLocation?. = location.photos[0].photo_reference
+
 
         val entryPicture = holder?.view?.imgLocation
 
-
         var piclink:String
         if(location.photos != null){
-            piclink = build_pictureString(location.photos[0]!!.photo_reference!!,"AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg","400","400")
+            piclink = buildPictureString(location.photos[0]!!.photo_reference!!,"AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg","400","400")
             println(piclink)
         }else{
             piclink = "https://www.cvent-assets.com/brand-page-guestside-site/assets/images/venue-card-placeholder.png"
@@ -46,9 +46,13 @@ class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewH
         }
 
         Picasso.with(holder.view.context).load(piclink).into(entryPicture)
+
+        var mapsString = buildMapsLink(location.geometry.location)
+        println(mapsString)
+
     }
 
-    fun build_pictureString(photoReference: String, apiToken: String, maxWidth: String, maxHeight:String): String {
+    fun buildPictureString(photoReference: String, apiToken: String, maxWidth: String, maxHeight:String): String {
 
         var baseString = "https://maps.googleapis.com/maps/api/place/photo?"
 
@@ -58,6 +62,16 @@ class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewH
         baseString = baseString + "&maxheight=" + maxHeight
 
         return baseString
+    }
+
+    fun buildMapsLink(coordinates: Coordinates? ):String{
+
+        var baseString = "http://maps.google.com/maps?q="
+        baseString = baseString + "" + coordinates?.lat
+        baseString = baseString + "," + coordinates?.lng
+
+        return baseString
+
     }
 
 }
