@@ -49,5 +49,9 @@
 
     //** strings for result */
     <string name="result_reviews">Rezensionen:</string>
+    <string name="result_hours">Zeiten:</string>
+    <string name="result_phone">Tel.:</string>
+    <string name="result_adress">Adresse:</string>
+    <string name="result_adress_btn">Zeige uns den Weg!</string>
 
 </resources>
