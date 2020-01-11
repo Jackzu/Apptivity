@@ -33,7 +33,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="0dp"
-            android:text="4 km"
+            android:text="1 km"
             android:textColor="?attr/Text_Color"
             android:textSize="15dp"
             app:layout_constraintStart_toEndOf="@+id/seekBar"

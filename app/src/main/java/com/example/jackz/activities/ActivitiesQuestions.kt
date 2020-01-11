@@ -1,12 +1,9 @@
 package com.example.jackz.activities
 
-import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jackz.R
@@ -16,17 +13,17 @@ import com.example.jackz.models.ResultData
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_locations.*
-import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
-import java.lang.ref.Reference
 
 class ActivitiesQuestions : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
     lateinit var seekbar : SeekBar
     lateinit var kmCount : TextView
-
+    var longitude : String ="13.628245"
+    var latitude : String ="52.343136"
+    var radius : Int =250
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -48,7 +45,7 @@ class ActivitiesQuestions : AppCompatActivity() {
         kmCount = findViewById(R.id.kmRadius) as TextView
 
         seekBar.max = 20
-        seekBar.setProgress(4)
+        seekBar.setProgress(1)
 
         seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
@@ -67,7 +64,10 @@ class ActivitiesQuestions : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
-                // Do something
+                var progress = seekBar.progress
+                progress= progress*1000
+                println(progress)
+                fetchJson(longitude, latitude, progress)
 
             }
         })
@@ -78,21 +78,20 @@ class ActivitiesQuestions : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 //        recyclerView.adapter = MainAdapter()
 
-        fetchJson()
+        fetchJson(longitude,latitude,radius)
 
 
     }
 
-
     /**
      * JSON API CALL TEST
      */
-    fun fetchJson(){
+    fun fetchJson(longitude: String, latitude: String, radius: Int){
         println("Attempting to Fetch Json")
 
         var apiTokenString = "&key=AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
 
-        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.343136,13.628245&radius=250"+ apiTokenString
+        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+radius+""+apiTokenString
 
         var request = Request.Builder().url(url).build()
 
