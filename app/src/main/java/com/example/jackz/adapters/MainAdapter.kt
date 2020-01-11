@@ -9,6 +9,7 @@ import com.example.jackz.R
 import com.example.jackz.activities.*
 import com.example.jackz.models.Coordinates
 import com.example.jackz.models.Location
+import com.example.jackz.models.PlaceResultObject
 import com.example.jackz.models.ResultData
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -16,6 +17,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item.view.*
 import okhttp3.*
 import java.io.IOException
+import java.util.*
 
 
 class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewHolder>(){
@@ -45,16 +47,23 @@ class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewH
         var piclink:String
         if(location.photos != null){
             piclink = buildPictureString(location.photos[0]!!.photo_reference!!,"AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg","400","400")
-            println(piclink)
+            //println(piclink)
         }else{
             piclink = "https://www.cvent-assets.com/brand-page-guestside-site/assets/images/venue-card-placeholder.png"
-            println(piclink)
+            //println(piclink)
         }
 
         Picasso.with(holder.view.context).load(piclink).into(entryPicture)
 
         var mapsString = buildMapsLink(location.geometry.location)
-        println(mapsString)
+        //println(mapsString)
+
+       /* println(location.place_id)
+        var myurl = GetApiData().buildUrl(location.place_id)
+
+        GetApiData().fetchJson(myurl)
+        var apiresponse = GetApiData().returnResult()
+        println(apiresponse)*/
 
     }
 
@@ -89,6 +98,67 @@ class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view){
 
             view.context.startActivity(intent)
         }
+    }
+
+
+}
+
+class GetApiData(){
+
+    var url:String = ""
+    var resultString:String? = null
+    val apiToken = "AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
+
+
+    fun buildUrl(placeID:String):String{
+
+        //Bauen des Call Strings für eine Location
+        var url = "https://maps.googleapis.com/maps/api/place/details/json?"
+        url = url + "key="      +   this.apiToken
+        url = url + "&placeid=" +   placeID
+        url = url + "&fields"
+
+        return url
+    }
+
+    fun fetchJson(myurl:String){
+        //this.onRequestCompleteListener = callback
+
+        val request = Request.Builder().url(myurl).build()
+        val client = OkHttpClient()
+
+        client.newCall(request).enqueue(object : Callback{
+
+            override fun onFailure(call: Call, e: IOException) {
+                //onRequestCompleteListener?.onError()
+                println("error")
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                if (response.isSuccessful) {
+                    val body = response.body()!!.string()
+
+                    val gson = GsonBuilder().create()
+                    val placeResultObject = gson.fromJson(body, PlaceResultObject::class.java)
+
+                    println(placeResultObject.result.place_id)
+
+                    //parse(body)
+                    //println("im done")
+                }
+                //onRequestCompleteListener?.onSuccess(resultString)
+            }
+
+        })
+    }
+
+    fun parse(response: String) {
+        this.resultString = response  //when I debug this, it contains data I need.
+    }
+
+    fun returnResult():String?{
+
+        return this.resultString
     }
 
 

@@ -23,7 +23,7 @@ class ActivitiesQuestions : AppCompatActivity() {
     lateinit var kmCount : TextView
     var longitude : String ="13.628245"
     var latitude : String ="52.343136"
-    var radius : Int =250
+    var radius : Int =1000
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +45,7 @@ class ActivitiesQuestions : AppCompatActivity() {
         seekbar = findViewById(R.id.seekBar) as SeekBar
         kmCount = findViewById(R.id.kmRadius) as TextView
 
-        seekBar.max = 20
+        seekBar.max = 5
         seekBar.setProgress(1)
 
         val type = intent.getStringExtra("type").toString()
@@ -107,7 +107,7 @@ class ActivitiesQuestions : AppCompatActivity() {
 
                 val gson:Gson = GsonBuilder().create()
                 val resultData = gson.fromJson(body, ResultData::class.java)
-                println(resultData.results[0].place_id)
+                //println(resultData.results[0].place_id)
 
 
 
