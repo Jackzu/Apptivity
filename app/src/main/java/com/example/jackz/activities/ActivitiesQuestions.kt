@@ -60,7 +60,9 @@ class ActivitiesQuestions : AppCompatActivity() {
     fun fetchJson(){
         println("Attempting to Fetch Json")
 
-        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.343136,13.628245&radius=150&key=AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
+        var apiTokenString = "&key=AIzaSyA8YAmNesahwa9H3EJJVs9DrfQ6MbHyIRg"
+
+        var  url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=52.343136,13.628245&radius=250"+ apiTokenString
 
         var request = Request.Builder().url(url).build()
 
