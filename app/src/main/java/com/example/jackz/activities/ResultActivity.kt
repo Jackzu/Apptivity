@@ -11,6 +11,7 @@ import com.example.jackz.adapters.SaveSettings
 class ResultActivity : AppCompatActivity() {
 
     lateinit var phoneNumber : TextView
+    lateinit var website : TextView
 
     private lateinit var saveSetting: SaveSettings
 
@@ -35,6 +36,15 @@ class ResultActivity : AppCompatActivity() {
         phoneNumber.setOnClickListener{
             val phoneString = phoneNumber.text.toString()
             dialPhoneNumber(phoneString)
+        }
+
+        website = findViewById(R.id.result_website_link) as TextView
+
+        website.setOnClickListener{
+            val website = "http://"+website.text.toString()
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(website))
+
+            startActivity(intent)
         }
     }
 
