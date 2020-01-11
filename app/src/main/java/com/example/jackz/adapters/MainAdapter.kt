@@ -10,8 +10,12 @@ import com.example.jackz.activities.*
 import com.example.jackz.models.Coordinates
 import com.example.jackz.models.Location
 import com.example.jackz.models.ResultData
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item.view.*
+import okhttp3.*
+import java.io.IOException
 
 
 class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewHolder>(){
