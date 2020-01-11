@@ -181,7 +181,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="13dp"
         android:text="015202083012"
-        android:textColor="?attr/Text_Color"
+        android:textColor="#1874ed"
         android:textSize="15dp"
         app:layout_constraintStart_toEndOf="@+id/result_phone"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -243,5 +243,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result_adress_postal" />
+
+    <Button
+        android:id="@+id/result_share"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:background="@drawable/buttons_round"
+        android:text="@string/result_share"
+        android:textColor="?attr/Text_Color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_adress_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.jackz.activities
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -23,7 +24,8 @@ import java.lang.ref.Reference
 class ActivitiesQuestions : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
-
+    lateinit var seekbar : SeekBar
+    lateinit var kmCount : TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +43,34 @@ class ActivitiesQuestions : AppCompatActivity() {
         setContentView(R.layout.activity_activitiesquestions)
 
         setSupportActionBar(findViewById(R.id.toolbar))
+
+        seekbar = findViewById(R.id.seekBar) as SeekBar
+        kmCount = findViewById(R.id.kmRadius) as TextView
+
+        seekBar.max = 20
+        seekBar.setProgress(4)
+
+        seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                // Display the current progress of SeekBar
+                if (progress == 0) {
+                    var progress2 = progress + 1
+                    kmCount.text = "<$progress2 km"
+                } else
+                    kmCount.text = "$progress km"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+                // Do something
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                // Do something
+
+            }
+        })
 
         //this.recyclerView.setBackgroundColor(Color.BLUE)
 

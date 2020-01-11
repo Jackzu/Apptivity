@@ -53,5 +53,6 @@
     <string name="result_phone">Tel.:</string>
     <string name="result_adress">Adresse:</string>
     <string name="result_adress_btn">Zeige uns den Weg!</string>
+    <string name="result_share">Teile diesen Ort!</string>
 
 </resources>

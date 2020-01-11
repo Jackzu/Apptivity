@@ -53,5 +53,7 @@
     <string name="result_phone">Phone:</string>
     <string name="result_adress">Address:</string>
     <string name="result_adress_btn">Show us the way!</string>
+    <string name="result_share">Share this Location!</string>
+
 
 </resources>
