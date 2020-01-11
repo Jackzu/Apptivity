@@ -41,6 +41,7 @@ class CameraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
 
+        camera_image_view.setImageResource(R.drawable.notfound)
 
         // toolbar
 
