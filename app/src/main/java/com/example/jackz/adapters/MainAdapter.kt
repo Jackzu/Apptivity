@@ -94,6 +94,10 @@ class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view){
     init {
         view.setOnClickListener{
             val intent = Intent(view.context, ResultActivity::class.java)
+            val value = view.txvTitle.getText().toString()
+
+            intent.putExtra("title","$value")
+
 
             view.context.startActivity(intent)
         }
