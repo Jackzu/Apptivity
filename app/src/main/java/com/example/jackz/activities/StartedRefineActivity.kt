@@ -38,17 +38,17 @@ class StartedRefineActivity : AppCompatActivity() {
             }
 
             val art_gallery = findViewById(R.id.art_gallery) as CardView
-            amusement.setOnClickListener{
+            art_gallery.setOnClickListener{
                 startAct(art_gallery)
             }
 
             val bowling_alley = findViewById(R.id.bowling_alley) as CardView
-            amusement.setOnClickListener{
+            bowling_alley.setOnClickListener{
                 startAct(bowling_alley)
             }
 
             val casino = findViewById(R.id.casino) as CardView
-            amusement.setOnClickListener{
+            casino.setOnClickListener{
                 startAct(casino)
             }
             val gym = findViewById(R.id.gym) as CardView
@@ -163,14 +163,9 @@ class StartedRefineActivity : AppCompatActivity() {
             pet_store.setOnClickListener{
                 startAct(pet_store)
             }
-
-
         }
 
         setSupportActionBar(findViewById(R.id.toolbar))
-
-
-
 
     }
 
