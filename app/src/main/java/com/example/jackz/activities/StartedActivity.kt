@@ -35,14 +35,14 @@ class StartedActivity : AppCompatActivity() {
         val categoryShopping = findViewById(R.id.category_shopping) as CardView
 
         categoryAcitvity.setOnClickListener {
-            val intent = Intent(this, ActivitiesQuestions::class.java)
+            val intent = Intent(this, StartedRefineActivity::class.java)
 
             intent.putExtra("type","type=activity")
 
             startActivity(intent)
         }
         categoryFood.setOnClickListener {
-            val intent = Intent(this, ActivitiesQuestions::class.java)
+            val intent = Intent(this, StartedRefineActivity::class.java)
 
             intent.putExtra("type","type=restaurant")
 
@@ -56,7 +56,7 @@ class StartedActivity : AppCompatActivity() {
             startActivity(intent)
         }
         categoryShopping.setOnClickListener {
-            val intent = Intent(this, ActivitiesQuestions::class.java)
+            val intent = Intent(this, StartedRefineActivity::class.java)
 
             intent.putExtra("type","type=shops")
 

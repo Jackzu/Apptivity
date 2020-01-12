@@ -55,5 +55,45 @@
     <string name="result_adress_btn">Show us the way!</string>
     <string name="result_share">Share this Location!</string>
 
+    //** strings for started_refine */
+    <string name="started_refine_txt_headline">Choose a category!</string>
+    <string name="amusement_park">Amusement Park</string>
+    <string name="aquarium">Aquarium</string>
+    <string name="art_gallery">Art Gallery</string>
+    <string name="bowling_alley">Bowling Alley</string>
+    <string name="casino">Casino</string>
+    <string name="gym">Gym</string>
+    <string name="library">Library</string>
+    <string name="movie_rental">Movie Rental</string>
+    <string name="movie_theater">Cinema</string>
+    <string name="museum">Museum</string>
+    <string name="night_club">Club</string>
+    <string name="park">Park</string>
+    <string name="stadium">Stadium</string>
+    <string name="zoo">Zoo</string>
+
+    //** strings for started_refine_restaurant */
+    <string name="bakery">Bakery</string>
+    <string name="bar">Bar</string>
+    <string name="cafe">Cafe</string>
+    <string name="meal_takeaway">Takeaway</string>
+    <string name="restaurant">Restaurant</string>
+
+    //** strings for started_refine_shops */
+    <string name="bicycle_store">Bycicle Store</string>
+    <string name="book_store">Book Store</string>
+    <string name="car_dealer">Car Dealership</string>
+    <string name="clothing_store">Clothing Store</string>
+    <string name="department_store">Department Store</string>
+    <string name="drugstore">Drugstore</string>
+    <string name="electronics_store">Electronics Store</string>
+    <string name="florist">Florist</string>
+    <string name="furniture_store">Furniture Store</string>
+    <string name="grocery_or_supermarket">Grocery Store</string>
+    <string name="jewelry_store">Jewelery Store</string>
+    <string name="pet_store">Pet Store</string>
+
+
+
 
 </resources>

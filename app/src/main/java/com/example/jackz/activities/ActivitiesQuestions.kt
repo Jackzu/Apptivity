@@ -23,7 +23,7 @@ class ActivitiesQuestions : AppCompatActivity() {
     lateinit var kmCount : TextView
     var longitude : String ="13.628245"
     var latitude : String ="52.343136"
-    var radius : Int =250
+    var radius : Int =1000
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +45,7 @@ class ActivitiesQuestions : AppCompatActivity() {
         seekbar = findViewById(R.id.seekBar) as SeekBar
         kmCount = findViewById(R.id.kmRadius) as TextView
 
-        seekBar.max = 20
+        seekBar.max = 5
         seekBar.setProgress(1)
 
         val type = intent.getStringExtra("type").toString()
@@ -68,7 +68,12 @@ class ActivitiesQuestions : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 var progress = seekBar.progress
-                progress= progress*1000
+                if(progress == 0){
+                    progress = 999
+                }
+                else {
+                    progress = progress * 1000
+                }
                 println(progress)
                 fetchJson(longitude, latitude, progress, type)
 

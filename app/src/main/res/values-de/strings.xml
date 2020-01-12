@@ -55,4 +55,43 @@
     <string name="result_adress_btn">Zeige uns den Weg!</string>
     <string name="result_share">Teile diesen Ort!</string>
 
+    //** strings for started_refine */
+    <string name="started_refine_txt_headline">Entscheide dich für eine Kategorie!</string>
+    <string name="amusement_park">Freizeitpark</string>
+    <string name="aquarium">Aquarium</string>
+    <string name="art_gallery">Kunstgalerie</string>
+    <string name="bowling_alley">Bowlingbahn</string>
+    <string name="casino">Casino</string>
+    <string name="gym">Fitnessstudio</string>
+    <string name="library">Bibliothek</string>
+    <string name="movie_rental">Filmverleih</string>
+    <string name="movie_theater">Kino</string>
+    <string name="museum">Museum</string>
+    <string name="night_club">Club</string>
+    <string name="park">Park</string>
+    <string name="stadium">Stadiom</string>
+    <string name="zoo">Zoo</string>
+
+    //** strings for started_refine_restaurant */
+    <string name="bakery">Bäcker</string>
+    <string name="bar">Bar</string>
+    <string name="cafe">Cafe</string>
+    <string name="meal_takeaway">Zum Mitnehmen</string>
+    <string name="restaurant">Restaurant</string>
+
+    //** strings for started_refine_shops */
+    <string name="bicycle_store">Fahrradladen</string>
+    <string name="book_store">Buchladen</string>
+    <string name="car_dealer">Auto Händler</string>
+    <string name="clothing_store">Bekleidungsgeschäft</string>
+    <string name="department_store">Kaufhaus</string>
+    <string name="drugstore">Drogerie</string>
+    <string name="electronics_store">Elektronik Geschäft</string>
+    <string name="florist">Blumenladen</string>
+    <string name="furniture_store">Möbelhaus</string>
+    <string name="grocery_or_supermarket">Supermarkt</string>
+    <string name="jewelry_store">Juwelier</string>
+    <string name="pet_store">Tierladen</string>
+
+
 </resources>
