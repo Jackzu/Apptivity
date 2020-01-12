@@ -98,10 +98,14 @@ class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view){
     init {
         view.setOnClickListener{
             val intent = Intent(view.context, ResultActivity::class.java)
-            val value = view.txvTitle.getText().toString()
 
-            intent.putExtra("title","$value")
+            val valueTitle = view.txvTitle.getText().toString()
+            val valueLink = view.txvLink.getText().toString()
+            val valuePicture = view.txvPicture.getText().toString()
 
+            intent.putExtra("title","$valueTitle")
+            intent.putExtra("link","$valueLink")
+            intent.putExtra("picture","$valuePicture")
 
             view.context.startActivity(intent)
         }

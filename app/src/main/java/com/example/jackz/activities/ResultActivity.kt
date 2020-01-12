@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.result.*
 
 class ResultActivity : AppCompatActivity() {
@@ -38,11 +39,25 @@ class ResultActivity : AppCompatActivity() {
         var resultAdressBtn = findViewById(R.id.result_adress_btn) as Button
         resultAdressBtn.setOnClickListener {
 
-            val location = intent.getStringExtra("title")
-            val website = "http://maps.google.co.in/maps?q="+location
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(website))
+            val location = intent.getStringExtra("link")
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(location))
 
             startActivity(intent)
+        }
+
+        var piclink = intent.getStringExtra("picture")
+        Picasso.with(this).load(piclink).into(imageView)
+
+        var resultShare = findViewById(R.id.result_share) as Button
+        resultShare.setOnClickListener {
+            val location = intent.getStringExtra("link")
+
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_SUBJECT,"This is where Apptivity lead us! Download now!")
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, "$location This is where Apptivity lead us! Download now!")
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "Share with your friends"))
         }
 
         phoneNumber = findViewById(R.id.result_phone_number) as TextView
