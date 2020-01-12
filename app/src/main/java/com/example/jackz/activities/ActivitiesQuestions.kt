@@ -39,9 +39,7 @@ class ActivitiesQuestions : AppCompatActivity() {
     private lateinit var saveSetting: SaveSettings
     lateinit var seekbar : SeekBar
     lateinit var kmCount : TextView
-    //var longitude : String ="13.628245"
     var longitude : String = ""
-    //var latitude : String ="52.343136"
     var latitude : String = ""
     var radius : Int =1000
     var type : String ="type=lodging"
@@ -139,11 +137,7 @@ class ActivitiesQuestions : AppCompatActivity() {
         if (checkPermissionForLocation(this)) {
             startLocationUpdates()
             println("gps next")
-            //println(gps)
-            //btnStartupdate.isEnabled = false
-            //btnStopUpdates.isEnabled = true
         }
-        //println(mLastLocation.latitude)
 
 
         /*** GPS Action On Create ***/
@@ -180,11 +174,9 @@ class ActivitiesQuestions : AppCompatActivity() {
         client.newCall(request).enqueue(object: Callback {
             override fun onResponse(call: Call?, response: Response?) {
                 val body : String? = response?.body()?.string()
-                //println(body)
 
                 val gson:Gson = GsonBuilder().create()
                 val resultData = gson.fromJson(body, ResultData::class.java)
-                //println(resultData.results[0].place_id)
 
                 runOnUiThread{
                     recyclerView.adapter = MainAdapter(resultData)
@@ -195,8 +187,7 @@ class ActivitiesQuestions : AppCompatActivity() {
 
             override fun onFailure(call: Call?, e: IOException?) {
                 println("Failed to execute request")
-                println(call)
-                println(e)
+
             }
         })
     }
