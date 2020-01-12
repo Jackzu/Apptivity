@@ -18,7 +18,7 @@
 
     //** strings for activity_info */
     <string name="info_txt_headline">So funktioniert es...</string>
-    <string name="info_txt_infotext">Apptivity hilft dir dabei deine neuen Lieblings Locations zu finden! Folge einfach den Fragen auf dem Bildschirm und wir werden den Rest der Arbeit für dich machen.</string>
+    <string name="info_txt_infotext">Apptivity hilft dir dabei deine neuen Lieblings Locations zu finden! Wähle einfach zischen den verschiedenen Kategorien und wir führen dich zu deiner neuen Lieblingslocation</string>
 
     //** strings for activity_started */
     <string name="started_txt_headline">Wähle eine Kategorie</string>

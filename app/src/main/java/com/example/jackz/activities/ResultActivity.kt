@@ -33,40 +33,14 @@ class ResultActivity : AppCompatActivity() {
         // toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        println(intent.getStringExtra("title"))
+        //set headline according to result
         result_headline.setText(intent.getStringExtra("title"))
 
-        var resultAdressBtn = findViewById(R.id.result_adress_btn) as Button
-        resultAdressBtn.setOnClickListener {
-
-            val location = intent.getStringExtra("link")
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(location))
-
-            startActivity(intent)
-        }
-
+        //set picture according to result
         var piclink = intent.getStringExtra("picture")
         Picasso.with(this).load(piclink).into(imageView)
 
-        var resultShare = findViewById(R.id.result_share) as Button
-        resultShare.setOnClickListener {
-            val location = intent.getStringExtra("link")
-
-            val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_SUBJECT,"This is where Apptivity lead us! Download now!")
-            intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT, "$location This is where Apptivity lead us! Download now!")
-            intent.type = "text/plain"
-            startActivity(Intent.createChooser(intent, "Share with your friends"))
-        }
-
-        phoneNumber = findViewById(R.id.result_phone_number) as TextView
-
-        phoneNumber.setOnClickListener{
-            val phoneString = phoneNumber.text.toString()
-            dialPhoneNumber(phoneString)
-        }
-
+        //open the website in the standard browser
         website = findViewById(R.id.result_website_link) as TextView
 
         website.setOnClickListener{
@@ -75,8 +49,44 @@ class ResultActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        //open the phone number in Phone App
+        phoneNumber = findViewById(R.id.result_phone_number) as TextView
+
+        phoneNumber.setOnClickListener{
+            val phoneString = phoneNumber.text.toString()
+            dialPhoneNumber(phoneString)
+        }
+
+        //set value and onclickliistener to open result in google maps
+        var resultAdressBtn = findViewById(R.id.result_adress_btn) as Button
+        resultAdressBtn.setOnClickListener {
+
+            var location = intent.getStringExtra("title")
+            location = "http://maps.google.co.in/maps?q="+location
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(location))
+
+            startActivity(intent)
+        }
+
+        //set value and onClickListener to share the result
+        var resultShare = findViewById(R.id.result_share) as Button
+        resultShare.setOnClickListener {
+            var location = intent.getStringExtra("title")
+
+            location = "http://maps.google.co.in/maps?q="+location
+            location = location.replace("\\s".toRegex(),"")
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_SUBJECT,"$location This is where Apptivity lead us! Download now!")
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, "$location This is where Apptivity lead us! Download now!")
+            intent.type = "text/plain"
+            startActivity(Intent.createChooser(intent, "Share with your friends"))
+        }
+
     }
 
+    //fun to open the phone app and paste the phone number
     fun dialPhoneNumber(phoneNumber: String) {
         val intent = Intent(Intent.ACTION_DIAL).apply {
             data = Uri.parse("tel:$phoneNumber")

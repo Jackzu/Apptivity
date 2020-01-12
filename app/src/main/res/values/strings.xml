@@ -16,7 +16,7 @@
 
     //** strings for activity_info */
     <string name="info_txt_headline">So here is how it works...</string>
-    <string name="info_txt_infotext">Apptivity helps you to find your new favorite locations! Just follow the questions on the screen and we will do the rest of the work for you.</string>
+    <string name="info_txt_infotext">Apptivity helps you to find your new favorite locations! Just choose between the different categories and we are going to show your new favorite location</string>
 
     //** strings for activity_started */
     <string name="started_txt_headline">Choose a category</string>
