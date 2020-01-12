@@ -72,6 +72,22 @@
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/imgLocation" />
 
+        <TextView
+        android:id="@+id/txvLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="linkhere"
+        android:visibility="gone"
+        />
+
+        <TextView
+            android:id="@+id/txvPicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="linkhere"
+            android:visibility="gone"
+            />
+
         <ImageView
             android:id="@+id/imgRating"
             android:layout_width="40dp"
