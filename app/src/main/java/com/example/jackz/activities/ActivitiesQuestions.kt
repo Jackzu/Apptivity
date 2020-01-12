@@ -112,7 +112,7 @@ class ActivitiesQuestions : AppCompatActivity() {
 
                 val gson:Gson = GsonBuilder().create()
                 val resultData = gson.fromJson(body, ResultData::class.java)
-                println(resultData.results[0].place_id)
+                //println(resultData.results[0].place_id)
 
 
 
