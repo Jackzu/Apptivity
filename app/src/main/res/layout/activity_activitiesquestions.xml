@@ -17,10 +17,10 @@
 
         <SeekBar
             android:id="@+id/seekBar"
-            android:layout_width="317dp"
+            android:layout_width="300dp"
             android:layout_height="29dp"
             android:layout_marginTop="2dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="1dp"
             android:thumbTint="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></SeekBar>

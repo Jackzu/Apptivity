@@ -28,8 +28,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.SecondActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activities.LocationsActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activities.InfoActivity"/>
         <activity android:name=".activities.StartedActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activities.SearchTypeActivity" android:screenOrientation="portrait"/>

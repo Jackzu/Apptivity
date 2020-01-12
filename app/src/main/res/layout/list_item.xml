@@ -35,12 +35,11 @@
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="235dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
+            android:layout_width="225dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
             android:layout_marginTop="2dp"
-            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/imgLocation"
             card_view:layout_constraintTop_toTopOf="parent">
 
@@ -54,7 +53,9 @@
                 android:text="Fischerbudeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
                 android:textColor="?attr/Text_Color"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="0dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

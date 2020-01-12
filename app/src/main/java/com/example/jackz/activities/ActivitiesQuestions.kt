@@ -24,7 +24,7 @@ import com.example.jackz.models.ResultData
 import com.google.android.gms.location.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import kotlinx.android.synthetic.main.activity_locations.*
+import kotlinx.android.synthetic.main.activity_activitiesquestions.*
 import okhttp3.*
 import java.io.IOException
 import java.text.SimpleDateFormat

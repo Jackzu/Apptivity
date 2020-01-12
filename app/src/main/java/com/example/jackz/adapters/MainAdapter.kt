@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jackz.R
 import com.example.jackz.activities.*
 import com.example.jackz.models.Coordinates
-import com.example.jackz.models.Location
 import com.example.jackz.models.PlaceResultObject
 import com.example.jackz.models.ResultData
 import com.google.gson.Gson
