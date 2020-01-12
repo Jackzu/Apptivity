@@ -7,26 +7,34 @@ import androidx.cardview.widget.CardView
 import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
 
+/* Site that lists subcategories base on extras in intent */
 class StartedRefineActivity : AppCompatActivity() {
 
+    //variables
     private lateinit var saveSetting: SaveSettings
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        //SharedPreferences state
-
+        //SharedPreferences state to load a theme
         saveSetting = SaveSettings(this)
         if (saveSetting.loadThemeState() == true) {
             setTheme(R.style.darkTheme)
         } else
             setTheme(R.style.AppTheme)
 
-
+        //read extra intent and set view accordingly
         val type = intent.getStringExtra("type").toString()
+
+        /** type activity */
+
         if(type== "type=activity") {
+
             setContentView(R.layout.activity_started_refine)
+
+            //now get every view, set an OnClickListener and give that view to startAct()
+            //not ideal solution but at first it wasnt supposed this many options
             val amusement = findViewById(R.id.amusement_park) as CardView
             amusement.setOnClickListener{
                 startAct(amusement)
@@ -88,6 +96,9 @@ class StartedRefineActivity : AppCompatActivity() {
                 startAct(zoo)
             }
         }
+
+        /** type restaurant */
+
         if(type== "type=restaurant"){
             setContentView(R.layout.activity_started_refine_restaurant)
 
@@ -112,6 +123,9 @@ class StartedRefineActivity : AppCompatActivity() {
                 startAct(restaurant)
             }
         }
+
+        /** type shops */
+
         if(type== "type=shops"){
             setContentView(R.layout.activity_started_refine_shops)
 
@@ -165,10 +179,12 @@ class StartedRefineActivity : AppCompatActivity() {
             }
         }
 
+        //toolbar
         setSupportActionBar(findViewById(R.id.toolbar))
 
     }
 
+    //function to start ActivitiesQuestions and parse extra according to the views name
     fun startAct(view: CardView){
             val intent = Intent(this, ActivitiesQuestions::class.java)
 

@@ -5,24 +5,27 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
 
+ /* only displays activity_savedsearch so far */
 class SavedSearchActivity : AppCompatActivity() {
 
+     //variables
     private lateinit var saveSetting: SaveSettings
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        //SharedPreferences state
+        super.onCreate(savedInstanceState)
+
+        //SharedPreferences state to load a theme
         saveSetting = SaveSettings(this)
         if (saveSetting.loadThemeState() == true) {
             setTheme(R.style.darkTheme)
         } else
             setTheme(R.style.AppTheme)
 
-        super.onCreate(savedInstanceState)
+        //set content to xml file
         setContentView(R.layout.activity_savedsearch)
 
         // toolbar
-
         setSupportActionBar(findViewById(R.id.toolbar))
     }
 }

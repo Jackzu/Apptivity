@@ -3,12 +3,9 @@ package com.example.jackz.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.LinearLayout
-import android.widget.Toolbar
-import com.example.jackz.Constants
 import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
 import kotlinx.android.synthetic.main.activity_main.*

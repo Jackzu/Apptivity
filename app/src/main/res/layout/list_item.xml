@@ -23,6 +23,8 @@
             android:id="@+id/imgLocation"
             android:layout_width="112dp"
             android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="2dp"
@@ -32,23 +34,29 @@
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txvTitle"
-            android:layout_width="275dp"
-            android:layout_height="43dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="235dp"
+            android:layout_height="40dp"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:maxLines="2"
-            android:text="Fischerbudeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-            android:textColor="?attr/Text_Color"
-            android:textSize="18sp"
-            android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/imgLocation"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            card_view:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="2"
+                android:text="Fischerbudeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+                android:textColor="?attr/Text_Color"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/txvRatings"

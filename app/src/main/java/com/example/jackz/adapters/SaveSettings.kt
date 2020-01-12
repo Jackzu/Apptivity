@@ -2,15 +2,13 @@ package com.example.jackz.adapters
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.jackz.R
-import kotlinx.android.synthetic.main.activity_main.*
 
 class SaveSettings(context: Context) {
+
+    //variabes
     private var sharedPreferences: SharedPreferences = context.getSharedPreferences("Action", Context.MODE_PRIVATE)
 
-
     //Save Theme Mode State: True or False
-
     fun setThemeState(state: Boolean?){
         val editor= sharedPreferences.edit()
         editor.putBoolean("Dark",state!!)
