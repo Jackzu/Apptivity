@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +9,6 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context=".activities.CameraActivity">
-
 
     <include
         android:id="@+id/toolbar"
@@ -37,7 +35,6 @@
         android:layout_width="400dp"
         android:layout_height="400dp" />
 
-    <!--Button to open camera-->
     <Button
         android:id="@+id/camera_capture_btn"
         android:text="@string/camera_capture"
@@ -55,7 +52,5 @@
         android:layout_marginTop="17dp"
         android:textColor="?attr/Text_Color"
         android:background="@drawable/buttons_round"/>
-
-
 
     </LinearLayout>

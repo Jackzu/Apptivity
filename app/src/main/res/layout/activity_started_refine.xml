@@ -38,6 +38,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/amusement_park"
+        android:text="amusement_park"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@+id/stuff"
@@ -73,6 +74,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/aquarium"
+        android:text="aquarium"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/amusement_park"
@@ -109,6 +111,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/art_gallery"
+        android:text="art_gallery"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/aquarium"
@@ -145,6 +148,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bowling_alley"
+        android:text="bowling_alley"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/art_gallery"
@@ -181,6 +185,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/casino"
+        android:text="casino"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/bowling_alley"
@@ -217,6 +222,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/gym"
+        android:text="gym"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/casino"
@@ -253,6 +259,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/library"
+        android:text="library"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/gym"
@@ -290,6 +297,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/movie_rental"
+        android:text="movie_rental"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/library"
@@ -326,6 +334,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/movie_theater"
+        android:text="movie_theater"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/movie_rental"
@@ -362,6 +371,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/museum"
+        android:text="museum"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/movie_theater"
@@ -398,6 +408,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/night_club"
+        android:text="night_club"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/museum"
@@ -434,6 +445,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/park"
+        android:text="park"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/night_club"
@@ -470,6 +482,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/stadium"
+        android:text="stadium"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/park"
@@ -506,6 +519,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/zoo"
+        android:text="zoo"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@id/stadium"

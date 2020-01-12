@@ -9,22 +9,18 @@
     <string name="main_camera_share">Zeige deinen Freunden wo wir dich hinbrachten!</string>
 
     //** App Theme Setting */
-
     <string name="theme">Wechsel Design</string>
 
 
     //** strings for activity_main */
-
     <string name="main_btn_start">Lass uns loslegen!</string>
     <string name="main_btn_info">Wie funktioniert es?</string>
 
     //** strings for activity_info */
-
     <string name="info_txt_headline">So funktioniert es...</string>
     <string name="info_txt_infotext">Apptivity hilft dir dabei deine neuen Lieblings Locations zu finden! Folge einfach den Fragen auf dem Bildschirm und wir werden den Rest der Arbeit für dich machen.</string>
 
     //** strings for activity_started */
-
     <string name="started_txt_headline">Wähle eine Kategorie</string>
     <string name="category_txt_activity">Aktivitäten</string>
     <string name="category_txt_restaurant">Essen</string>
@@ -32,7 +28,6 @@
     <string name="category_txt_shopping">Shoppen</string>
 
     //** strings for activity_searchtype */
-
     <string name="searchtype_txt_headline">Starte eine neue Suche oder wähle eine gespeicherte</string>
     <string name="searchtype_txt_newsearch">Neue Suche</string>
     <string name="searchtype_txt_savedsearch">Gespeicherte Suchen</string>
@@ -92,6 +87,5 @@
     <string name="grocery_or_supermarket">Supermarkt</string>
     <string name="jewelry_store">Juwelier</string>
     <string name="pet_store">Tierladen</string>
-
 
 </resources>

@@ -43,19 +43,6 @@ class LocationsAdapter(val context: Context, private val locations: List<Locatio
                 }
             }
 
-            itemView.imgShare.setOnClickListener {
-
-                currentLocation?.let {
-                    val message: String = "Bruder lass mal zu " + currentLocation!!.title
-
-                    val intent = Intent()
-                    intent.action = Intent.ACTION_SEND
-                    intent.putExtra(Intent.EXTRA_TEXT, message)
-                    intent.type = "text/plain"
-
-                    context.startActivity(Intent.createChooser(intent, "Share to:"))
-                }
-            }
         }
 
         fun setData(

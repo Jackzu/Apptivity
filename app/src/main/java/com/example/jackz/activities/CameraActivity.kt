@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileOutputStream
 
+    /* Class to take and share picture */
 class CameraActivity : AppCompatActivity() {
 
     private lateinit var saveSetting: SaveSettings
@@ -31,29 +32,35 @@ class CameraActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        //SharedPreferences state
+        super.onCreate(savedInstanceState)
+
+        //SharedPreferences state to load a theme
         saveSetting = SaveSettings(this)
         if (saveSetting.loadThemeState() == true) {
             setTheme(R.style.darkTheme)
         } else
             setTheme(R.style.AppTheme)
 
-        super.onCreate(savedInstanceState)
+        //set content to xml file
         setContentView(R.layout.activity_camera)
 
+        //set the image to default as long as no picture has been taken
         camera_image_view.setImageResource(R.drawable.notfound)
 
         // toolbar
-
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        //button share
-
+        //OnClickListener for the button to share the picture
         camera_share_btn.setOnClickListener {
+
+            //cant share as long as no picture has been taken
             if (image_uri == null) {
                 val toast = R.string.camera_toast
                 Toast.makeText(this, toast, Toast.LENGTH_SHORT ).show()
-            } else {
+            }
+
+            //get the picture that has been taken and send it through an intent with additional text and a subject
+            else {
                 val image = image_uri
                 val intent = Intent(Intent.ACTION_SEND)
 
@@ -68,37 +75,44 @@ class CameraActivity : AppCompatActivity() {
             }
         }
 
-        //button click
+        //OnClickListener for button to take the picture
         camera_capture_btn.setOnClickListener {
-            //if system os is Marshmallow or Above, we need to request runtime permission
+
+            //get the Request to take a picture first
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                 if (checkSelfPermission(Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED ||
                     checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_DENIED){
+
                     //permission was not enabled
                     val permission = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    //show popup to request permission
+
+                    //call function to request the permission
                     requestPermissions(permission, PERMISSION_CODE)
                 }
                 else{
-                    //permission already granted
+                    //permission granted open the camera
                     openCamera()
                 }
             }
             else{
-                //system os is < marshmallow
+                //system needs no permission since its oler than marshmallow
                 openCamera()
             }
         }
     }
 
+    //function to open the camera
     private fun openCamera() {
+
+        //collect values to start the camera intent
         val values = ContentValues()
         values.put(MediaStore.Images.Media.TITLE, "New Picture")
         values.put(MediaStore.Images.Media.DESCRIPTION, "From the Camera")
         image_uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-        //camera intent
+
+        //start the camera intent with the given values in form of image_uri
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri)
         startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
@@ -106,23 +120,25 @@ class CameraActivity : AppCompatActivity() {
 
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        //called when user presses ALLOW or DENY from Permission Request Popup
+        //called when user allows or denies permission request
         when(requestCode){
             PERMISSION_CODE -> {
                 if (grantResults.size > 0 && grantResults[0] ==
                     PackageManager.PERMISSION_GRANTED){
-                    //permission from popup was granted
+                    //permission was granted
                     openCamera()
                 }
                 else{
-                    //permission from popup was denied
-                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                    //permission was denied
+                    Toast.makeText(this, "Camera usage denied", Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
 
+    //when an activity is successful display the image
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
         //called when image was captured from camera intent
         if (resultCode == Activity.RESULT_OK){
             //set image captured to image view

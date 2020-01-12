@@ -33,7 +33,7 @@ class StartedRefineActivity : AppCompatActivity() {
             }
 
             val aquarium = findViewById(R.id.aquarium) as CardView
-            amusement.setOnClickListener{
+            aquarium.setOnClickListener{
                 startAct(aquarium)
             }
 
@@ -172,8 +172,11 @@ class StartedRefineActivity : AppCompatActivity() {
     fun startAct(view: CardView){
             val intent = Intent(this, ActivitiesQuestions::class.java)
 
-            val value = view.id.toString()
-            intent.putExtra("type",value)
+            val viewid = view.id
+
+            var value = view.context.resources.getResourceEntryName(viewid)
+            value= "type="+value
+            intent.putExtra("type","$value")
 
             startActivity(intent)
         }

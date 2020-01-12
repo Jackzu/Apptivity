@@ -1,4 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
+    //** strings for activity_main */
+    <string name="main_btn_start">Lets get started!</string>
+    <string name="main_btn_info">How does it work?</string>
     <string name="app_name">Jackz</string>
     <string name="main_btn_show_toast">Show Toast</string>
     <string name="main_input_hint">enter message...</string>
@@ -8,21 +12,13 @@
     <string name="main_camera_share">Show your friends where we brought you!</string>
 
     //** App Theme Setting */
-
     <string name="theme">Change Theme</string>
 
-    //** strings for activity_main */
-
-    <string name="main_btn_start">Lets get started!</string>
-    <string name="main_btn_info">How does it work?</string>
-
     //** strings for activity_info */
-
     <string name="info_txt_headline">So here is how it works...</string>
     <string name="info_txt_infotext">Apptivity helps you to find your new favorite locations! Just follow the questions on the screen and we will do the rest of the work for you.</string>
 
     //** strings for activity_started */
-
     <string name="started_txt_headline">Choose a category</string>
     <string name="category_txt_activity">Activities</string>
     <string name="category_txt_restaurant">Food</string>
@@ -30,10 +26,7 @@
     <string name="category_txt_shopping">Shopping</string>
 
     //** strings for activity_searchtype */
-
-    <string name="searchtype_txt_headline">Start a new search or
-        choose a saved one</string>
-
+    <string name="searchtype_txt_headline">Start a new search or choose a saved one</string>
     <string name="searchtype_txt_newsearch">New Search</string>
     <string name="searchtype_txt_savedsearch">Saved Searches</string>
 
@@ -92,8 +85,5 @@
     <string name="grocery_or_supermarket">Grocery Store</string>
     <string name="jewelry_store">Jewelery Store</string>
     <string name="pet_store">Pet Store</string>
-
-
-
 
 </resources>

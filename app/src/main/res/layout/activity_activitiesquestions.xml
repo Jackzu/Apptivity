@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor">
 
-
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
@@ -17,22 +15,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp">
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="317dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="2dp"
-        android:thumbTint="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"></SeekBar>
-
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="317dp"
+            android:layout_height="29dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="5dp"
+            android:thumbTint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></SeekBar>
 
         <TextView
             android:id="@+id/kmRadius"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
             android:text="1 km"
             android:textColor="?attr/Text_Color"
             android:textSize="15dp"

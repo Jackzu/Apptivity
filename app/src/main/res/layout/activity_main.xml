@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,11 +8,9 @@
     android:screenOrientation="portrait"
     tools:context=".activities.MainActivity">
 
-
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-
 
     <Button
         android:id="@+id/main_btn_info"
@@ -30,59 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_btn_start" />
-
-    <EditText
-        android:id="@+id/userMessage"
-        android:layout_width="335dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="8dp"
-        android:ems="14"
-        android:hint="@string/main_input_hint"
-        app:layout_constraintBottom_toTopOf="@+id/btnRecycleView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:text="@string/main_btn_send_message"
-        app:layout_constraintEnd_toStartOf="@+id/btnShare"
-        app:layout_constraintTop_toBottomOf="@+id/userMessage" />
-
-    <Button
-        android:id="@+id/btnShare"
-        android:layout_width="87dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginBottom="96dp"
-        android:text="@string/main_btn_share"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnRecycleView"
-        android:layout_width="70dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginEnd="227dp"
-        android:layout_marginRight="227dp"
-        android:layout_marginBottom="84dp"
-        android:text="@string/main_btn_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSend"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/main_view_logo"
@@ -125,7 +69,6 @@
         android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="38dp">
-
 
         <TextView
             android:id="@+id/main_camera_share"

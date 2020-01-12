@@ -13,53 +13,38 @@ import com.example.jackz.R
 import com.example.jackz.adapters.SaveSettings
 import kotlinx.android.synthetic.main.activity_main.*
 
+ /* Main Site that gets loaded on startup */
 
 class MainActivity : AppCompatActivity() {
 
+    //variables
     private lateinit var saveSetting: SaveSettings
     val CAMERA_REQUEST_CODE = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        //SharedPreferences state
+        super.onCreate(savedInstanceState)
+
+        //SharedPreferences state to load a theme
         saveSetting = SaveSettings(this)
         if (saveSetting.loadThemeState() == true) {
             setTheme(R.style.darkTheme)
         }else
             setTheme(R.style.AppTheme)
 
-        super.onCreate(savedInstanceState)
+        //set content to xml file
         setContentView(R.layout.activity_main)
 
-
         // toolbar
-
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        //camera
+        //get the whole view to set the onClickListener
         val camera = findViewById(R.id.main_open_camera) as LinearLayout
+
+        /** call activity_camera.xml */
 
         camera.setOnClickListener{
             val intent = Intent(this, CameraActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnSend.setOnClickListener {
-
-            val message: String = userMessage.text.toString()
-            val intent = Intent(this, SecondActivity::class.java)
-
-            intent.putExtra(Constants.USER_MSG_KEY, message)
-            startActivity(intent)
-        }
-
-        btnShare.setOnClickListener {
-            val intent = Intent(this, ResultActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnRecycleView.setOnClickListener {
-            val intent = Intent(this, LocationsActivity::class.java)
             startActivity(intent)
         }
 

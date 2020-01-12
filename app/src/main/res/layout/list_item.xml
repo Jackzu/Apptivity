@@ -34,16 +34,19 @@
 
         <TextView
             android:id="@+id/txvTitle"
-            android:layout_width="217dp"
-            android:layout_height="wrap_content"
+            android:layout_width="275dp"
+            android:layout_height="43dp"
             android:layout_marginStart="2dp"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
             android:maxLines="2"
             android:text="Fischerbudeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
             android:textColor="?attr/Text_Color"
             android:textSize="18sp"
             android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/imgLocation"
             card_view:layout_constraintTop_toTopOf="parent" />
 
@@ -73,25 +76,10 @@
             android:id="@+id/txvTimes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
             android:layout_marginBottom="2dp"
             android:text="offen"
             android:textColor="?attr/Text_Color"
             android:textSize="18sp"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintEnd_toStartOf="@+id/imgShare" />
-
-        <ImageView
-            android:id="@+id/imgShare"
-            android:layout_width="52dp"
-            android:layout_height="42dp"
-            android:layout_gravity="center"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="2dp"
-            android:src="@android:drawable/ic_menu_share"
-            android:tint="?attr/Text_Color"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent" />
 
