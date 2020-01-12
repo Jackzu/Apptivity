@@ -55,6 +55,10 @@ class MainAdapter(val ResultData: ResultData) : RecyclerView.Adapter<CustomViewH
         Picasso.with(holder.view.context).load(piclink).into(entryPicture)
 
         var mapsString = buildMapsLink(location.geometry.location)
+        holder.view.txvLink.text = mapsString
+        holder.view.txvPicture.text =piclink
+
+
         //println(mapsString)
 
        /* println(location.place_id)

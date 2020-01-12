@@ -187,6 +187,8 @@ class ActivitiesQuestions : AppCompatActivity() {
                 runOnUiThread{
                     recyclerView.adapter = MainAdapter(resultData)
                 }
+
+
             }
 
             override fun onFailure(call: Call?, e: IOException?) {
